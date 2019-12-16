@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ValueText</string>
+    <!-- Login -->
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot your login?</string>
+    <string name="note_login">Note: You must have ValueText installed at your salesforce before proceed</string>
+    <string name="powered_by">Powered by ValueText</string>
+    <!-- Phone Number -->
+    <string name="phone_number">Phone Number</string>
+    <string name="next">Next</string>
+    <!-- Validations -->
+    <string name="validate_username">Please enter username..!</string>
+    <string name="validate_password">Please enter password..!</string>
+
+</resources>
