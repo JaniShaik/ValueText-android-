@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Corner radius -->
+    <dimen name="corner_radius">3dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+
     <dimen name="_1dp">1dp</dimen>
     <dimen name="_2dp">2dp</dimen>
     <dimen name="_3dp">3dp</dimen>

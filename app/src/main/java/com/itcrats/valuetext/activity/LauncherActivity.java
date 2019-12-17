@@ -6,13 +6,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.itcrats.valuetext.R;
+import com.itcrats.valuetext.utils.Constants;
 
 public class LauncherActivity extends AppCompatActivity {
 
     // Context
     private Context mContext = this;
+    // ImageView
+    private ImageView logoIMG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,10 @@ public class LauncherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_launcher);
         // Hiding Action Bar
         getSupportActionBar().hide();
+        // ImageView
+        logoIMG = findViewById(R.id.logoIMG);
+        // Set Image
+        Glide.with(this).load(Constants.LOGO_URL).into(logoIMG);
         // Navigate to Login
         Thread thread = new Thread() {
             @Override

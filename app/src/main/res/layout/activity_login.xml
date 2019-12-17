@@ -27,35 +27,13 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="@dimen/_20dp"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                android:id="@+id/logoIMG"/>
 
-            <EditText
-                android:id="@+id/usernameET"
+            <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40dp"
-                android:layout_marginTop="@dimen/_10dp"
-                android:layout_marginBottom="@dimen/_10dp"
-                android:background="@drawable/edit_text_bg"
-                android:hint="@string/username"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="@dimen/_15sp" />
-
-            <EditText
-                android:id="@+id/passwordET"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40dp"
-                android:layout_marginTop="@dimen/_10dp"
-                android:layout_marginBottom="@dimen/_10dp"
-                android:background="@drawable/edit_text_bg"
-                android:hint="@string/password"
-                android:importantForAutofill="no"
-                android:inputType="textPassword"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="@dimen/_15sp" />
+                android:id="@+id/typeSpinner"/>
 
             <Button
                 android:id="@+id/loginBTN"
@@ -64,22 +42,11 @@
                 android:layout_height="@dimen/_40dp"
                 android:layout_marginTop="@dimen/_10dp"
                 android:background="@drawable/button_bg"
-                android:text="@string/login"
+                android:text="@string/oauth"
                 android:textAllCaps="false"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/_15sp" />
-
-            <TextView
-                android:id="@+id/forgotTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10dp"
-                android:layout_marginBottom="@dimen/_10dp"
-                android:gravity="end"
-                android:text="@string/forgot_password"
-                android:textColor="@android:color/white"
-                android:visibility="visible" />
 
         </LinearLayout>
 
