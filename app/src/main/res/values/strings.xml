@@ -14,7 +14,8 @@
     <!-- Validations -->
     <string name="validate_username">Please enter username..!</string>
     <string name="validate_password">Please enter password..!</string>
-
+    <!-- Menu -->
     <string name="action_settings">Settings</string>
+    <string name="search">Search</string>
 
 </resources>

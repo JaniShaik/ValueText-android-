@@ -1,6 +1,7 @@
 package com.itcrats.valuetext.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,8 +12,11 @@ import android.view.MenuItem;
 
 import com.itcrats.valuetext.R;
 import com.itcrats.valuetext.adapter.ChatAdapter;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
+
+import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,16 +52,21 @@ public class MainActivity extends AppCompatActivity {
     final ArrayList<String> chatNameList = new ArrayList<String>();
     final ArrayList<String> chatDescriptionList = new ArrayList<String>();
     final ArrayList<String> chatDatesList = new ArrayList<String>();
+    // Material SearchView
+    private MaterialSearchView searchView;
+    // Toolbar
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Toolbar
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         // Initialization
         initialize();
         // Data
-
-
         for (int i = 0; i < values.length; ++i) {
             chatNameList.add(values[i]);
         }
@@ -69,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < values.length; ++i) {
             chatDatesList.add(chatDates[i]);
         }
+        // Search
+        searchContent();
     }
 
     // Initialize
@@ -82,10 +93,59 @@ public class MainActivity extends AppCompatActivity {
         chatRV.setAdapter(chatAdapter);
     }
 
+    /**
+     * SearchView
+     */
+    private void searchContent() {
+        searchView = findViewById(R.id.search_view);
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                //Do some magic
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //Do some magic
+                return false;
+            }
+        });
+
+        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+            @Override
+            public void onSearchViewShown() {
+                //Do some magic
+            }
+
+            @Override
+            public void onSearchViewClosed() {
+                //Do some magic
+            }
+        });
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        // Search
+        MenuItem searchItem = menu.findItem(R.id.search);
+        searchView.setMenuItem(searchItem);
+
+        /*SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toasty.success(mContext, query).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });*/
         return true;
     }
 
